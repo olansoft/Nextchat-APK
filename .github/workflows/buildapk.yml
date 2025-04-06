@@ -27,11 +27,6 @@ jobs:
           channel: stable
           flutter-version: 3.24.1
 
-      - name: Update Android SDK tools
-        run: |
-          yes | sdkmanager --licenses
-          sdkmanager "platforms;android-35" "build-tools;35.0.0"
-
       - name: Install @cloudflare/next-on-pages
         working-directory: ./ChatGPT-Next-Web
         run: npm i @cloudflare/next-on-pages

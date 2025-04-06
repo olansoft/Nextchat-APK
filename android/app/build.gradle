@@ -1,5 +1,6 @@
 plugins {
-    id "com.android.application"
+    // 明确指定插件版本，这里使用 7.4.2 作为示例，你可以根据需要选择合适的更高版本
+    id "com.android.application" version "7.4.2"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
 }

@@ -1,7 +1,19 @@
+buildscript {
+    ext.kotlin_version = '2.1.20'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
 plugins {
-    // 明确指定插件版本，这里使用 7.4.2 作为示例，你可以根据需要选择合适的更高版本
     id "com.android.application" version "7.4.2"
-    id "kotlin-android"
+    // 将 Kotlin 插件版本更新为 2.1.20
+    id "kotlin-android" version "2.1.20" 
     id "dev.flutter.flutter-gradle-plugin"
 }
 

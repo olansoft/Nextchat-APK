@@ -1,3 +1,17 @@
+buildscript {
+    // 定义 Kotlin 版本变量
+    ext.kotlin_version = '2.1.20' 
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+        // 使用定义的 Kotlin 版本变量
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" 
+    }
+}
+
 allprojects {
     repositories {
         google()

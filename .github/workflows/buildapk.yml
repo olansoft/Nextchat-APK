@@ -1,4 +1,4 @@
-name: Build APK
+name: Build Web Zip
 
 on:
   issues:
@@ -46,13 +46,9 @@ jobs:
       - name: Move Zip File
         run: mkdir assets && ls ./ChatGPT-Next-Web/.vercel/output/ && mv ./ChatGPT-Next-Web/.vercel/output/web.zip ./assets/ && ls ./assets
 
-      - name: Build APK
-        run: flutter build apk --release
-
-      - name: Upload APK and Web Zip
+      - name: Upload Web Zip
         uses: actions/upload-artifact@v4
         with:
           name: release
           path: |
-            build/app/outputs/flutter-apk/app-release.apk
             ./assets/web.zip

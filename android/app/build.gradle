@@ -1,22 +1,3 @@
-buildscript {
-    ext.kotlin_version = '2.1.20'
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-
-plugins {
-    id "com.android.application" version "7.4.2"
-    // 将 Kotlin 插件版本更新为 2.1.20
-    id "kotlin-android" version "2.1.20" 
-    id "dev.flutter.flutter-gradle-plugin"
-}
-
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -35,6 +16,12 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+plugins {
+    id "com.android.application"
+    id "kotlin-android"  // 移除版本号，使用项目级别定义的版本
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
 android {
     namespace "net.aithing.nextchat"
     compileSdk flutter.compileSdkVersion
@@ -43,6 +30,10 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 
     defaultConfig {

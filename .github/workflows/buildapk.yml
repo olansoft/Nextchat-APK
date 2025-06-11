@@ -1,9 +1,7 @@
 name: Build Web Zip and APK
 
 on:
-  issues:
-    types:
-      - opened
+  workflow_dispatch
 
 jobs:
   build:

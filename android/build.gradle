@@ -1,6 +1,6 @@
 buildscript {
     // 定义 Kotlin 版本变量
-    ext.kotlin_version = '2.1.20' 
+    ext.kotlin_version = '1.9.10' 
     repositories {
         google()
         mavenCentral()
